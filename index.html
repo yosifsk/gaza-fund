@@ -1,42 +1,227 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Gaza Support Fund</title>
+<title>Gaza Family Support Fund</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-body{font-family:Arial;background:#0b1220;color:#fff;margin:0;padding:20px}
-.container{max-width:800px;margin:auto}
-.card{background:#111827;padding:15px;margin-top:15px;border-radius:10px}
-h1{color:#ff4b4b;text-align:center}
-.wallet{word-break:break-all;color:#34d399}
-button{padding:10px;width:100%;margin-top:10px;border:0;border-radius:8px}
-.copy{background:#ef4444;color:white}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body{
+margin:0;
+font-family:Inter, Arial;
+background: radial-gradient(circle at top, #1b2a4a, #0b1220);
+color:white;
+}
+
+.container{
+max-width:950px;
+margin:auto;
+padding:20px;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:40px 20px;
+}
+
+.hero h1{
+font-size:28px;
+margin-bottom:10px;
+color:#ff4d4d;
+}
+
+.hero p{
+color:#cbd5e1;
+}
+
+/* CARD */
+.card{
+background: rgba(255,255,255,0.05);
+backdrop-filter: blur(10px);
+border:1px solid rgba(255,255,255,0.08);
+padding:18px;
+margin-top:18px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h2{
+font-size:18px;
+margin-bottom:10px;
+}
+
+/* PROGRESS */
+.progress{
+height:10px;
+background:#1f2937;
+border-radius:50px;
+overflow:hidden;
+}
+
+.bar{
+height:10px;
+width:20%;
+background:linear-gradient(90deg,#22c55e,#16a34a);
+}
+
+/* WALLETS */
+.wallet{
+word-break:break-all;
+font-size:13px;
+color:#34d399;
+background:#0f172a;
+padding:10px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+transition:0.2s;
+}
+
+.copy{
+background:#ef4444;
+color:white;
+}
+
+.copy:hover{
+background:#dc2626;
+}
+
+.share{
+background:#3b82f6;
+color:white;
+}
+
+.share:hover{
+background:#2563eb;
+}
+
+/* IMAGES */
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-top:10px;
+}
+
+.grid img{
+width:100%;
+height:140px;
+object-fit:cover;
+border-radius:12px;
+transition:0.3s;
+}
+
+.grid img:hover{
+transform:scale(1.05);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.grid{grid-template-columns:1fr;}
+.hero h1{font-size:22px;}
+}
 </style>
 </head>
 
 <body>
+
 <div class="container">
 
-<h1>Support Gaza Family</h1>
+<!-- HERO -->
+<div class="hero">
+<h1>After Losing Everything in Gaza</h1>
+<p>Emergency Family Support Fund • Help us survive & rebuild</p>
+</div>
 
+<!-- STORY -->
 <div class="card">
-<h3>Story</h3>
-<p>I am a computer engineer from Gaza. My family lost everything due to war and we need help to survive.</p>
+<h2>📖 Our Story</h2>
+<p>
+I am Youssef Nabil Saqallah, a computer systems engineer from Gaza.
+My family lost our home and stability due to war. We are now displaced
+and struggling with basic needs like food, water, and shelter.
+</p>
 </div>
 
+<!-- PROGRESS -->
 <div class="card">
-<h3>USDT TRC20</h3>
-<p class="wallet">TVmqc8f3eaTJ73zbrF6rNqT828RgbKctNN</p>
-<button class="copy" onclick="navigator.clipboard.writeText('TVmqc8f3eaTJ73zbrF6rNqT828RgbKctNN')">Copy</button>
+<h2>📊 Donation Progress</h2>
+<p>$120 raised of $5000 goal</p>
+<div class="progress">
+<div class="bar"></div>
+</div>
 </div>
 
+<!-- IMAGES -->
 <div class="card">
-<h3>BTC</h3>
-<p class="wallet">bc1qvuuhntce4vh7peuaelkqxd9657f6vantnreq3h</p>
-<button class="copy" onclick="navigator.clipboard.writeText('bc1qvuuhntce4vh7peuaelkqxd9657f6vantnreq3h')">Copy</button>
+<h2>🖼️ Family Photos</h2>
+<div class="grid">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+</div>
+</div>
+
+<!-- USDT -->
+<div class="card">
+<h2>💰 USDT (TRC20)</h2>
+<div class="wallet">TVmqc8f3eaTJ73zbrF6rNqT828RgbKctNN</div>
+<button class="copy" onclick="navigator.clipboard.writeText('TVmqc8f3eaTJ73zbrF6rNqT828RgbKctNN')">
+Copy Address
+</button>
+</div>
+
+<!-- ETH -->
+<div class="card">
+<h2>🟣 Ethereum / BNB</h2>
+<div class="wallet">0x0AA70BCB4bfC4beE8660aEe6Fd0053bDf9dc7700</div>
+<button class="copy" onclick="navigator.clipboard.writeText('0x0AA70BCB4bfC4beE8660aEe6Fd0053bDf9dc7700')">
+Copy Address
+</button>
+</div>
+
+<!-- BTC -->
+<div class="card">
+<h2>₿ Bitcoin</h2>
+<div class="wallet">bc1qvuuhntce4vh7peuaelkqxd9657f6vantnreq3h</div>
+<button class="copy" onclick="navigator.clipboard.writeText('bc1qvuuhntce4vh7peuaelkqxd9657f6vantnreq3h')">
+Copy Address
+</button>
+</div>
+
+<!-- SHARE -->
+<div class="card">
+<h2>🔗 Share Campaign</h2>
+<button class="share" onclick="share()">Share Now</button>
 </div>
 
 </div>
+
+<script>
+function share(){
+if(navigator.share){
+navigator.share({
+title:"Support Gaza Family",
+text:"Please help this family",
+url:window.location.href
+});
+}else{
+alert("Copy link and share manually");
+}
+}
+</script>
+
 </body>
 </html>
