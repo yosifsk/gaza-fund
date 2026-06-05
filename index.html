@@ -42,11 +42,6 @@ color:white;
 padding:15px;
 }
 
-.overlay h1{
-margin:0;
-font-size:22px;
-}
-
 .card{
 background:white;
 padding:15px;
@@ -59,10 +54,8 @@ box-shadow:0 2px 8px rgba(0,0,0,0.05);
 h2{
 font-size:17px;
 margin-bottom:10px;
-color:#111827;
 }
 
-/* GALLERY */
 .gallery{
 display:grid;
 grid-template-columns:repeat(2, 1fr);
@@ -76,7 +69,6 @@ object-fit:cover;
 border-radius:10px;
 }
 
-/* WALLET */
 .wallet{
 word-break:break-all;
 font-size:13px;
@@ -87,7 +79,6 @@ border-radius:8px;
 border:1px solid #a7f3d0;
 }
 
-/* BUTTONS */
 button{
 width:100%;
 padding:12px;
@@ -98,23 +89,11 @@ font-weight:bold;
 cursor:pointer;
 }
 
-.copy{
-background:#00b964;
-color:white;
-}
+.copy{background:#00b964;color:white;}
+.share{background:#111827;color:white;}
 
-.copy:hover{
-background:#009955;
-}
-
-.share{
-background:#111827;
-color:white;
-}
-
-.share:hover{
-background:#000;
-}
+.lang{display:none;}
+.en{display:block;}
 </style>
 </head>
 
@@ -122,32 +101,74 @@ background:#000;
 
 <div class="container">
 
+<!-- LANGUAGE -->
+<button class="share" onclick="toggleLang()">🌐 عربي / English</button>
+
 <!-- COVER -->
 <div class="cover">
 <img src="cover.jpg">
 <div class="overlay">
-<h1>Help Gaza Family Rebuild Life</h1>
+<h1>Gaza Support Fund</h1>
 </div>
 </div>
 
 <!-- STORY -->
 <div class="card">
-<h2>Our Story</h2>
+
+<!-- ENGLISH -->
+<div class="lang en">
+<h2>My Story</h2>
+
 <p>
-I am a computer systems engineer from Gaza. My family’s life changed completely due to the war.
-We lost our home and were forced into displacement after everything we built was destroyed.
-
-My family is known for its long history of craftsmanship and work in confectionery in Gaza City,
-but today we are struggling to meet basic needs such as food, shelter, and safety.
-
-Like many families here, we are trying to survive day by day and rebuild some form of stability
-after losing our home and facing extremely difficult circumstances.
+I am Youssef, a 31-year-old computer systems engineer from Gaza.
+My life stopped three years ago between displacement and survival.
+I lost my home and my job, and I have been struggling ever since just to survive.
 </p>
+
+<p>
+I dream of a normal life again — a small home, electricity, and clean water flowing from a tap instead of carrying it in containers.
+Basic things that became impossible here.
+</p>
+
+<p>
+Work is extremely difficult to find, so I created this campaign and added crypto wallets to receive support,
+as many platforms do not support people from my region.
+</p>
+
+<p>
+We are human beings like everyone else. We deserve dignity, safety, and a chance to rebuild our lives.
+</p>
+</div>
+
+<!-- ARABIC -->
+<div class="lang ar">
+<h2>قصتي</h2>
+
+<p>
+أنا يوسف، مهندس أنظمة حاسوب من غزة، عمري 31 سنة.
+توقفت حياتي منذ ثلاث سنوات بين النزوح والبقاء على قيد الحياة.
+فقدت منزلي وعملي، ومنذ ذلك الوقت أحاول النجاة يوماً بيوم.
+</p>
+
+<p>
+أحلم أن أعيش حياة طبيعية من جديد، منزل بسيط، كهرباء، وماء يتدفق من الصنبور بدل حمله في أوعية.
+أشياء أصبحت حلمًا هنا.
+</p>
+
+<p>
+أجد صعوبة كبيرة في العمل، لذلك أنشأت هذه الحملة وأضفت محافظ العملات الرقمية لأن الكثير من المنصات لا تدعم منطقتنا.
+</p>
+
+<p>
+نحن بشر مثل باقي البشر، من حقنا أن نعيش بكرامة وأمان وفرصة لإعادة بناء حياتنا.
+</p>
+</div>
+
 </div>
 
 <!-- IMAGES -->
 <div class="card">
-<h2>Situation Images</h2>
+<h2>Images</h2>
 <div class="gallery">
 <img src="image1.jpg">
 <img src="image2.jpg">
@@ -156,47 +177,64 @@ after losing our home and facing extremely difficult circumstances.
 </div>
 </div>
 
-<!-- USDT -->
+<!-- CONTACT -->
+<div class="card">
+<h2>Contact</h2>
+
+<p><b>Email:</b> saqallah118@gmail.com</p>
+
+<button class="share" onclick="window.location.href='mailto:saqallah118@gmail.com?subject=Support Inquiry&body=Hello Youssef, I would like to contact you.'">
+📩 Send Email
+</button>
+</div>
+
+<!-- WALLETS -->
 <div class="card">
 <h2>USDT (TRC20)</h2>
 <div class="wallet">TVmqc8f3eaTJ73zbrF6rNqT828RgbKctNN</div>
-<button class="copy" onclick="navigator.clipboard.writeText('TVmqc8f3eaTJ73zbrF6rNqT828RgbKctNN')">
-Copy Address
-</button>
+<button class="copy" onclick="navigator.clipboard.writeText('TVmqc8f3eaTJ73zbrF6rNqT828RgbKctNN')">Copy</button>
 </div>
 
-<!-- ETH -->
 <div class="card">
 <h2>ETH / BNB</h2>
 <div class="wallet">0x0AA70BCB4bfC4beE8660aEe6Fd0053bDf9dc7700</div>
-<button class="copy" onclick="navigator.clipboard.writeText('0x0AA70BCB4bfC4beE8660aEe6Fd0053bDf9dc7700')">
-Copy Address
-</button>
+<button class="copy" onclick="navigator.clipboard.writeText('0x0AA70BCB4bfC4beE8660aEe6Fd0053bDf9dc7700')">Copy</button>
 </div>
 
-<!-- BTC -->
 <div class="card">
 <h2>Bitcoin</h2>
 <div class="wallet">bc1qvuuhntce4vh7peuaelkqxd9657f6vantnreq3h</div>
-<button class="copy" onclick="navigator.clipboard.writeText('bc1qvuuhntce4vh7peuaelkqxd9657f6vantnreq3h')">
-Copy Address
-</button>
+<button class="copy" onclick="navigator.clipboard.writeText('bc1qvuuhntce4vh7peuaelkqxd9657f6vantnreq3h')">Copy</button>
 </div>
 
 <!-- SHARE -->
 <div class="card">
-<h2>Share Campaign</h2>
-<button class="share" onclick="share()">Share Now</button>
+<h2>Share</h2>
+<button class="share" onclick="share()">Share Campaign</button>
 </div>
 
 </div>
 
 <script>
+let currentLang="en";
+
+function toggleLang(){
+  if(currentLang==="en"){
+    currentLang="ar";
+    document.querySelectorAll(".en").forEach(e=>e.style.display="none");
+    document.querySelectorAll(".ar").forEach(e=>e.style.display="block");
+  }else{
+    currentLang="en";
+    document.querySelectorAll(".ar").forEach(e=>e.style.display="none");
+    document.querySelectorAll(".en").forEach(e=>e.style.display="block");
+  }
+}
+
 function share(){
 if(navigator.share){
 navigator.share({
 title:"Gaza Support Fund",
-text:"Please support this family",
+text:"Support this campaign",
 url:window.location.href
 });
 }else{
