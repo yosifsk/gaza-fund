@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin Panel</title>
+
+<style>
+body{font-family:Arial;background:#111;color:#fff;margin:0}
+.container{max-width:600px;margin:auto;padding:20px}
+
+input,textarea{
+width:100%;padding:10px;margin-top:10px;border-radius:8px;border:none
+}
+
+button{
+width:100%;padding:10px;margin-top:10px;border:none;border-radius:8px;
+background:#00b964;color:#fff;font-weight:bold;cursor:pointer
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🔐 Admin Dashboard</h2>
+
+<input id="pass" type="password" placeholder="Enter password">
+<button onclick="login()">Login</button>
+
+<div id="panel" style="display:none">
+
+<h3>Update Fund</h3>
+
+<input id="goal" placeholder="Goal">
+<input id="raised" placeholder="Raised">
+
+<button onclick="updateFund()">Save</button>
+
+<button onclick="resetData()">Reset</button>
+
+</div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
