@@ -1,170 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Gaza Emergency Fund</title>
+<title>Support Page</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{
-margin:0;
-font-family:Arial;
-background:#f3f4f6;
-color:#111827;
-}
-
-/* CONTAINER */
-.container{
-max-width:900px;
-margin:auto;
-padding:20px;
-}
-
-/* HEADER */
-.header{
-background:white;
-padding:15px;
-border-radius:12px;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.badge{
-background:#00b964;
-color:white;
-padding:5px 10px;
-border-radius:20px;
-font-size:12px;
-}
-
-/* COVER */
-.cover{
-margin-top:15px;
-position:relative;
-border-radius:14px;
-overflow:hidden;
-height:260px;
-}
-
-.cover img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.cover-text{
-position:absolute;
-bottom:0;
-width:100%;
-padding:15px;
-color:white;
-background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-}
-
-.cover-text h1{
-margin:0;
-font-size:22px;
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:2fr 1fr;
-gap:15px;
-margin-top:15px;
-}
-
-@media(max-width:800px){
-.grid{grid-template-columns:1fr;}
-}
-
-/* CARD */
-.card{
-background:white;
-padding:15px;
-border-radius:12px;
-box-shadow:0 2px 8px rgba(0,0,0,0.05);
-margin-top:15px;
-}
-
-h2{
-font-size:16px;
-margin-bottom:10px;
-}
-
-/* PROGRESS */
-.progress{
-height:10px;
-background:#e5e7eb;
-border-radius:50px;
-overflow:hidden;
-}
-
-.bar{
-height:10px;
-width:30%;
-background:#00b964;
-}
-
-/* BUTTONS */
-button{
-width:100%;
-padding:12px;
-border:none;
-border-radius:10px;
-font-weight:bold;
-cursor:pointer;
-margin-top:10px;
-}
-
-.donate{
-background:#00b964;
-color:white;
-}
-
-.donate:hover{
-background:#009a55;
-}
-
-.copy{
-background:#111827;
-color:white;
-}
-
-.copy:hover{
-background:#000;
-}
-
-/* WALLET */
-.wallet{
-word-break:break-all;
-background:#ecfdf5;
-padding:10px;
-border-radius:8px;
-border:1px solid #a7f3d0;
-font-size:13px;
-color:#065f46;
-}
-
-/* PHOTOS */
-.photos{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:8px;
-}
-
-.photos img{
-width:100%;
-height:100px;
-object-fit:cover;
-border-radius:10px;
-}
-
-@media(max-width:600px){
-.photos{grid-template-columns:1fr;}
-}
+body{font-family:Arial;margin:0;background:#f6f7f9}
+.container{max-width:800px;margin:auto;padding:20px}
+.card{background:white;padding:15px;margin-top:15px;border-radius:12px}
+.update{border-left:4px solid #16a34a;padding-left:10px;margin-top:10px}
+.wallet{background:#f0fdf4;padding:10px;border-radius:8px}
 </style>
 </head>
 
@@ -172,103 +18,50 @@ border-radius:10px;
 
 <div class="container">
 
-<!-- HEADER -->
-<div class="header">
-<strong>GoFund Style Campaign</strong>
-<span class="badge">Verified Story</span>
-</div>
-
-<!-- COVER -->
-<div class="cover">
-<img src="cover.jpg">
-<div class="cover-text">
-<h1>Help Gaza Family Rebuild Life</h1>
-<p>Emergency humanitarian support</p>
-</div>
-</div>
-
-<div class="grid">
-
-<!-- LEFT -->
-<div>
-
-<!-- STORY -->
 <div class="card">
-<h2>📖 Story</h2>
-<p>
-I am a computer systems engineer from Gaza.
-My family lost our home and stability due to war.
-We are now displaced and need urgent support for food, shelter, and survival.
-</p>
+<h2>My Support Campaign</h2>
+<p>Computer Engineer from Gaza</p>
 </div>
 
-<!-- UPDATES -->
 <div class="card">
-<h2>📢 Updates</h2>
-<p>• We are currently displaced and moving between shelters.</p>
-<p>• Basic needs are running out.</p>
-<p>• Any support makes a real difference.</p>
+<h3>Updates</h3>
+<div id="updates">Loading...</div>
 </div>
 
-<!-- PHOTOS -->
 <div class="card">
-<h2>🖼️ Photos</h2>
-<div class="photos">
-<img src="photo1.jpg">
-<img src="photo2.jpg">
-<img src="photo3.jpg">
-</div>
+<h3>Wallets</h3>
+<div class="wallet">USDT: XXX</div>
+<div class="wallet">BTC: XXX</div>
 </div>
 
 </div>
 
-<!-- RIGHT -->
-<div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-<!-- DONATION -->
-<div class="card">
-<h2>💚 Fund Progress</h2>
-<p>$120 raised of $5000</p>
-<div class="progress">
-<div class="bar"></div>
-</div>
+const firebaseConfig = {
+  apiKey: "XXX",
+  authDomain: "XXX",
+  projectId: "XXX",
+};
 
-<button class="donate" onclick="alert('Use wallets below to donate')">
-Donate Now
-</button>
-</div>
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-<!-- USDT -->
-<div class="card">
-<h2>USDT (TRC20)</h2>
-<div class="wallet">TVmqc8f3eaTJ73zbrF6rNqT828RgbKctNN</div>
-<button class="copy" onclick="navigator.clipboard.writeText('TVmqc8f3eaTJ73zbrF6rNqT828RgbKctNN')">
-Copy
-</button>
-</div>
+async function load(){
+const snap = await getDocs(collection(db,"updates"));
 
-<!-- ETH -->
-<div class="card">
-<h2>ETH / BNB</h2>
-<div class="wallet">0x0AA70BCB4bfC4beE8660aEe6Fd0053bDf9dc7700</div>
-<button class="copy" onclick="navigator.clipboard.writeText('0x0AA70BCB4bfC4beE8660aEe6Fd0053bDf9dc7700')">
-Copy
-</button>
-</div>
+let html = "";
+snap.forEach(d=>{
+html += `<div class="update">• ${d.data().text}</div>`;
+});
 
-<!-- BTC -->
-<div class="card">
-<h2>Bitcoin</h2>
-<div class="wallet">bc1qvuuhntce4vh7peuaelkqxd9657f6vantnreq3h</div>
-<button class="copy" onclick="navigator.clipboard.writeText('bc1qvuuhntce4vh7peuaelkqxd9657f6vantnreq3h')">
-Copy
-</button>
-</div>
+document.getElementById("updates").innerHTML = html;
+}
 
-</div>
-</div>
-
-</div>
+load();
+</script>
 
 </body>
 </html>
