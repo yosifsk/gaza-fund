@@ -19,6 +19,7 @@ margin:auto;
 padding:20px;
 }
 
+/* COVER */
 .cover{
 position:relative;
 height:240px;
@@ -42,6 +43,7 @@ color:white;
 padding:15px;
 }
 
+/* CARD */
 .card{
 background:white;
 padding:15px;
@@ -51,23 +53,7 @@ border:1px solid #e5e7eb;
 box-shadow:0 2px 8px rgba(0,0,0,0.05);
 }
 
-h2{
-font-size:17px;
-margin-bottom:10px;
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(2, 1fr);
-gap:10px;
-}
-
-.gallery img{
-width:100%;
-height:160px;
-object-fit:cover;
-border-radius:10px;
-}
+h2{font-size:17px;margin-bottom:10px;}
 
 .wallet{
 word-break:break-all;
@@ -92,8 +78,22 @@ cursor:pointer;
 .copy{background:#00b964;color:white;}
 .share{background:#111827;color:white;}
 
+/* STORY LANG */
 .lang{display:none;}
 .en{display:block;}
+
+/* IMAGES VERTICAL */
+.gallery{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+object-fit:cover;
+}
 </style>
 </head>
 
@@ -104,9 +104,9 @@ cursor:pointer;
 <!-- LANGUAGE -->
 <button class="share" onclick="toggleLang()">🌐 عربي / English</button>
 
-<!-- COVER -->
+<!-- COVER IMAGE -->
 <div class="cover">
-<img src="cover.jpg">
+<img src="https://drive.google.com/uc?export=download&id=1X_MPoQGyC-5eN6j_ar3BpUfE8owU_LxJ">
 <div class="overlay">
 <h1>Gaza Support Fund</h1>
 </div>
@@ -118,25 +118,22 @@ cursor:pointer;
 <!-- ENGLISH -->
 <div class="lang en">
 <h2>My Story</h2>
-
 <p>
 I am Youssef, a 31-year-old computer systems engineer from Gaza.
-My life stopped three years ago between displacement and survival.
-I lost my home and my job, and I have been struggling ever since just to survive.
+My life stopped three years ago between displacement and survival. I lost my home and my job,
+and I have been struggling ever since just to survive day by day.
 </p>
 
 <p>
 I dream of a normal life again — a small home, electricity, and clean water flowing from a tap instead of carrying it in containers.
-Basic things that became impossible here.
 </p>
 
 <p>
-Work is extremely difficult to find, so I created this campaign and added crypto wallets to receive support,
-as many platforms do not support people from my region.
+Work is extremely difficult to find, so I created this campaign to try to survive and rebuild basic stability.
 </p>
 
 <p>
-We are human beings like everyone else. We deserve dignity, safety, and a chance to rebuild our lives.
+We are human beings like everyone else. We deserve dignity and the right to live.
 </p>
 </div>
 
@@ -146,21 +143,19 @@ We are human beings like everyone else. We deserve dignity, safety, and a chance
 
 <p>
 أنا يوسف، مهندس أنظمة حاسوب من غزة، عمري 31 سنة.
-توقفت حياتي منذ ثلاث سنوات بين النزوح والبقاء على قيد الحياة.
-فقدت منزلي وعملي، ومنذ ذلك الوقت أحاول النجاة يوماً بيوم.
+توقفت حياتي منذ ثلاث سنوات بين النزوح والبقاء على قيد الحياة، فقدت منزلي وعملي.
 </p>
 
 <p>
-أحلم أن أعيش حياة طبيعية من جديد، منزل بسيط، كهرباء، وماء يتدفق من الصنبور بدل حمله في أوعية.
-أشياء أصبحت حلمًا هنا.
+أحلم بحياة طبيعية، منزل بسيط، كهرباء، وماء يتدفق من الصنبور بدل حمله.
 </p>
 
 <p>
-أجد صعوبة كبيرة في العمل، لذلك أنشأت هذه الحملة وأضفت محافظ العملات الرقمية لأن الكثير من المنصات لا تدعم منطقتنا.
+من الصعب جداً إيجاد عمل، لذلك أنشأت هذه الحملة لمحاولة البقاء وإعادة بناء حياتي.
 </p>
 
 <p>
-نحن بشر مثل باقي البشر، من حقنا أن نعيش بكرامة وأمان وفرصة لإعادة بناء حياتنا.
+نحن بشر مثل باقي البشر، من حقنا أن نعيش بكرامة.
 </p>
 </div>
 
@@ -169,21 +164,25 @@ We are human beings like everyone else. We deserve dignity, safety, and a chance
 <!-- IMAGES -->
 <div class="card">
 <h2>Images</h2>
+
 <div class="gallery">
-<img src="image1.jpg">
-<img src="image2.jpg">
-<img src="image3.jpg">
-<img src="image4.jpg">
+
+<img src="https://drive.google.com/uc?export=download&id=108508FL_HAqwmOEo_mP1b2t3_TQMofsb">
+
+<img src="https://drive.google.com/uc?export=download&id=1ZRvrwouQtAXSzA1dIBlQwxeb-uT0Btnx">
+
+<img src="https://drive.google.com/uc?export=download&id=1ouNdB22VraSNEhpJA4_b3d-LnyMmpt4B">
+
 </div>
 </div>
 
 <!-- CONTACT -->
 <div class="card">
 <h2>Contact</h2>
-
 <p><b>Email:</b> saqallah118@gmail.com</p>
 
-<button class="share" onclick="window.location.href='mailto:saqallah118@gmail.com?subject=Support Inquiry&body=Hello Youssef, I would like to contact you.'">
+<button class="share"
+onclick="window.location.href='mailto:saqallah118@gmail.com?subject=Support&body=Hello Youssef'">
 📩 Send Email
 </button>
 </div>
@@ -219,15 +218,15 @@ We are human beings like everyone else. We deserve dignity, safety, and a chance
 let currentLang="en";
 
 function toggleLang(){
-  if(currentLang==="en"){
-    currentLang="ar";
-    document.querySelectorAll(".en").forEach(e=>e.style.display="none");
-    document.querySelectorAll(".ar").forEach(e=>e.style.display="block");
-  }else{
-    currentLang="en";
-    document.querySelectorAll(".ar").forEach(e=>e.style.display="none");
-    document.querySelectorAll(".en").forEach(e=>e.style.display="block");
-  }
+if(currentLang==="en"){
+currentLang="ar";
+document.querySelectorAll(".en").forEach(e=>e.style.display="none");
+document.querySelectorAll(".ar").forEach(e=>e.style.display="block");
+}else{
+currentLang="en";
+document.querySelectorAll(".ar").forEach(e=>e.style.display="none");
+document.querySelectorAll(".en").forEach(e=>e.style.display="block");
+}
 }
 
 function share(){
